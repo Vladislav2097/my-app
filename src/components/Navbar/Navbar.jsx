@@ -1,9 +1,14 @@
 import React from 'react';
 import s from './Navbar.module.css'
 import { NavLink } from 'react-router-dom';
+import DialogItem from "../Dialogs/DialogItem/DialogItem";
 
-const Navbar = () => {
-  return (
+const Navbar = (props) => {
+
+    let navbarFriends = props.state.sitebar
+        .map( d => <div>{d.name}</div>)
+
+    return (
     <nav className={s.nav}>
       <div>
         <NavLink to='/profile' className={navData => navData.isActive ? s.active : s.item}>Profile</NavLink>
@@ -19,6 +24,12 @@ const Navbar = () => {
       </div>
       <div>
         <NavLink to='/settings' className={navData => navData.isActive ? s.active : s.item}>Settings</NavLink>
+      </div>
+      <div>
+          <h3>Friends</h3>
+          <div className={s.friends}>
+              {navbarFriends}
+          </div>
       </div>
     </nav>
   )

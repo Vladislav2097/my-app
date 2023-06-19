@@ -13,3 +13,8 @@
   color: gold;
   text-decoration: none;
 }
+
+.friends {
+  display: flex;
+  justify-content: space-between;
+}

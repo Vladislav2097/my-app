@@ -8,6 +8,10 @@
     color: white;
 }
 
+.dialogsItems img{
+    width: 30px;
+}
+
 .dialogsItems .active {
     color: gold;
 }
